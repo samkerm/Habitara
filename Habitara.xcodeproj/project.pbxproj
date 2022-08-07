@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53BAF833289F29CF00ED4DA8 /* HabitaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */; };
+		53BAF835289F29CF00ED4DA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF834289F29CF00ED4DA8 /* ContentView.swift */; };
+		53BAF837289F29D000ED4DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BAF836289F29D000ED4DA8 /* Assets.xcassets */; };
+		53BAF83A289F29D000ED4DA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BAF839289F29D000ED4DA8 /* Preview Assets.xcassets */; };
+		53BAF83C289F29D000ED4DA8 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */; };
+		53BAF83F289F29D000ED4DA8 /* Habitara.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF83D289F29D000ED4DA8 /* Habitara.xcdatamodeld */; };
+		53BAF849289F29D000ED4DA8 /* HabitaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */; };
+		53BAF853289F29D000ED4DA8 /* HabitaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF852289F29D000ED4DA8 /* HabitaraUITests.swift */; };
+		53BAF855289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF854289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift */; };
+		53BAF862289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF861289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift */; };
+		53BAF86A28A05E0900ED4DA8 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF86928A05E0900ED4DA8 /* CalendarService.swift */; };
+		53BAF86C28A05E4200ED4DA8 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF86B28A05E4200ED4DA8 /* Services.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53BAF845289F29D000ED4DA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BAF827289F29CF00ED4DA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53BAF82E289F29CF00ED4DA8;
+			remoteInfo = Habitara;
+		};
+		53BAF84F289F29D000ED4DA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BAF827289F29CF00ED4DA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53BAF82E289F29CF00ED4DA8;
+			remoteInfo = Habitara;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53BAF82F289F29CF00ED4DA8 /* Habitara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitara.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraApp.swift; sourceTree = "<group>"; };
+		53BAF834289F29CF00ED4DA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53BAF836289F29D000ED4DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53BAF839289F29D000ED4DA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		53BAF83E289F29D000ED4DA8 /* Habitara.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habitara.xcdatamodel; sourceTree = "<group>"; };
+		53BAF844289F29D000ED4DA8 /* HabitaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitaraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraTests.swift; sourceTree = "<group>"; };
+		53BAF84E289F29D000ED4DA8 /* HabitaraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitaraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BAF852289F29D000ED4DA8 /* HabitaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraUITests.swift; sourceTree = "<group>"; };
+		53BAF854289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		53BAF861289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraAppCoordinator.swift; sourceTree = "<group>"; };
+		53BAF86928A05E0900ED4DA8 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		53BAF86B28A05E4200ED4DA8 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53BAF82C289F29CF00ED4DA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF841289F29D000ED4DA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF84B289F29D000ED4DA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53BAF826289F29CF00ED4DA8 = {
+			isa = PBXGroup;
+			children = (
+				53BAF831289F29CF00ED4DA8 /* Habitara */,
+				53BAF847289F29D000ED4DA8 /* HabitaraTests */,
+				53BAF851289F29D000ED4DA8 /* HabitaraUITests */,
+				53BAF830289F29CF00ED4DA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53BAF830289F29CF00ED4DA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF82F289F29CF00ED4DA8 /* Habitara.app */,
+				53BAF844289F29D000ED4DA8 /* HabitaraTests.xctest */,
+				53BAF84E289F29D000ED4DA8 /* HabitaraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53BAF831289F29CF00ED4DA8 /* Habitara */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF867289FFB4E00ED4DA8 /* Component */,
+				53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */,
+				53BAF861289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift */,
+				53BAF834289F29CF00ED4DA8 /* ContentView.swift */,
+				53BAF863289FFA6200ED4DA8 /* Services */,
+				53BAF836289F29D000ED4DA8 /* Assets.xcassets */,
+				53BAF838289F29D000ED4DA8 /* Preview Content */,
+			);
+			path = Habitara;
+			sourceTree = "<group>";
+		};
+		53BAF838289F29D000ED4DA8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF839289F29D000ED4DA8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53BAF847289F29D000ED4DA8 /* HabitaraTests */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */,
+			);
+			path = HabitaraTests;
+			sourceTree = "<group>";
+		};
+		53BAF851289F29D000ED4DA8 /* HabitaraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF852289F29D000ED4DA8 /* HabitaraUITests.swift */,
+				53BAF854289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift */,
+			);
+			path = HabitaraUITests;
+			sourceTree = "<group>";
+		};
+		53BAF863289FFA6200ED4DA8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF86B28A05E4200ED4DA8 /* Services.swift */,
+				53BAF868289FFC4F00ED4DA8 /* Calendar */,
+				53BAF866289FFA8900ED4DA8 /* Presistence */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		53BAF866289FFA8900ED4DA8 /* Presistence */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */,
+				53BAF83D289F29D000ED4DA8 /* Habitara.xcdatamodeld */,
+			);
+			path = Presistence;
+			sourceTree = "<group>";
+		};
+		53BAF867289FFB4E00ED4DA8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		53BAF868289FFC4F00ED4DA8 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF86928A05E0900ED4DA8 /* CalendarService.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53BAF82E289F29CF00ED4DA8 /* Habitara */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BAF858289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "Habitara" */;
+			buildPhases = (
+				53BAF82B289F29CF00ED4DA8 /* Sources */,
+				53BAF82C289F29CF00ED4DA8 /* Frameworks */,
+				53BAF82D289F29CF00ED4DA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Habitara;
+			productName = Habitara;
+			productReference = 53BAF82F289F29CF00ED4DA8 /* Habitara.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53BAF843289F29D000ED4DA8 /* HabitaraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BAF85B289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "HabitaraTests" */;
+			buildPhases = (
+				53BAF840289F29D000ED4DA8 /* Sources */,
+				53BAF841289F29D000ED4DA8 /* Frameworks */,
+				53BAF842289F29D000ED4DA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BAF846289F29D000ED4DA8 /* PBXTargetDependency */,
+			);
+			name = HabitaraTests;
+			productName = HabitaraTests;
+			productReference = 53BAF844289F29D000ED4DA8 /* HabitaraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53BAF84D289F29D000ED4DA8 /* HabitaraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BAF85E289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "HabitaraUITests" */;
+			buildPhases = (
+				53BAF84A289F29D000ED4DA8 /* Sources */,
+				53BAF84B289F29D000ED4DA8 /* Frameworks */,
+				53BAF84C289F29D000ED4DA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BAF850289F29D000ED4DA8 /* PBXTargetDependency */,
+			);
+			name = HabitaraUITests;
+			productName = HabitaraUITests;
+			productReference = 53BAF84E289F29D000ED4DA8 /* HabitaraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53BAF827289F29CF00ED4DA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					53BAF82E289F29CF00ED4DA8 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					53BAF843289F29D000ED4DA8 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 53BAF82E289F29CF00ED4DA8;
+					};
+					53BAF84D289F29D000ED4DA8 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 53BAF82E289F29CF00ED4DA8;
+					};
+				};
+			};
+			buildConfigurationList = 53BAF82A289F29CF00ED4DA8 /* Build configuration list for PBXProject "Habitara" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53BAF826289F29CF00ED4DA8;
+			productRefGroup = 53BAF830289F29CF00ED4DA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53BAF82E289F29CF00ED4DA8 /* Habitara */,
+				53BAF843289F29D000ED4DA8 /* HabitaraTests */,
+				53BAF84D289F29D000ED4DA8 /* HabitaraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53BAF82D289F29CF00ED4DA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BAF83A289F29D000ED4DA8 /* Preview Assets.xcassets in Resources */,
+				53BAF837289F29D000ED4DA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF842289F29D000ED4DA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF84C289F29D000ED4DA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53BAF82B289F29CF00ED4DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BAF862289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift in Sources */,
+				53BAF86C28A05E4200ED4DA8 /* Services.swift in Sources */,
+				53BAF86A28A05E0900ED4DA8 /* CalendarService.swift in Sources */,
+				53BAF83C289F29D000ED4DA8 /* PersistenceService.swift in Sources */,
+				53BAF83F289F29D000ED4DA8 /* Habitara.xcdatamodeld in Sources */,
+				53BAF835289F29CF00ED4DA8 /* ContentView.swift in Sources */,
+				53BAF833289F29CF00ED4DA8 /* HabitaraApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF840289F29D000ED4DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BAF849289F29D000ED4DA8 /* HabitaraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BAF84A289F29D000ED4DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BAF855289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift in Sources */,
+				53BAF853289F29D000ED4DA8 /* HabitaraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53BAF846289F29D000ED4DA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53BAF82E289F29CF00ED4DA8 /* Habitara */;
+			targetProxy = 53BAF845289F29D000ED4DA8 /* PBXContainerItemProxy */;
+		};
+		53BAF850289F29D000ED4DA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53BAF82E289F29CF00ED4DA8 /* Habitara */;
+			targetProxy = 53BAF84F289F29D000ED4DA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		53BAF856289F29D000ED4DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53BAF857289F29D000ED4DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53BAF859289F29D000ED4DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habitara/Preview Content\"";
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.Habitara;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53BAF85A289F29D000ED4DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habitara/Preview Content\"";
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.Habitara;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53BAF85C289F29D000ED4DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.HabitaraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habitara.app/Habitara";
+			};
+			name = Debug;
+		};
+		53BAF85D289F29D000ED4DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.HabitaraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habitara.app/Habitara";
+			};
+			name = Release;
+		};
+		53BAF85F289F29D000ED4DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.HabitaraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Habitara;
+			};
+			name = Debug;
+		};
+		53BAF860289F29D000ED4DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5EL7YNNLPR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tracker.HabitaraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Habitara;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53BAF82A289F29CF00ED4DA8 /* Build configuration list for PBXProject "Habitara" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BAF856289F29D000ED4DA8 /* Debug */,
+				53BAF857289F29D000ED4DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BAF858289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "Habitara" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BAF859289F29D000ED4DA8 /* Debug */,
+				53BAF85A289F29D000ED4DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BAF85B289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "HabitaraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BAF85C289F29D000ED4DA8 /* Debug */,
+				53BAF85D289F29D000ED4DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BAF85E289F29D000ED4DA8 /* Build configuration list for PBXNativeTarget "HabitaraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BAF85F289F29D000ED4DA8 /* Debug */,
+				53BAF860289F29D000ED4DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		53BAF83D289F29D000ED4DA8 /* Habitara.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53BAF83E289F29D000ED4DA8 /* Habitara.xcdatamodel */,
+			);
+			currentVersion = 53BAF83E289F29D000ED4DA8 /* Habitara.xcdatamodel */;
+			path = Habitara.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 53BAF827289F29CF00ED4DA8 /* Project object */;
+}
