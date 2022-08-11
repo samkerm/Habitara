@@ -6,14 +6,23 @@
 //
 
 import CoreData
+import Combine
+
+enum PersistenceError: Error {
+    case failedTogetAllItems
+}
 
 protocol PersistenceServiceProvider {
-    func store()
+    var container: NSPersistentContainer { get set }
+    var items: PassthroughSubject<[Item], PersistenceError> { get }
+    func addItem(item: Item)
+    func retrieveItems()
 }
 
 extension Services {
     
-    struct Persistence: Service, PersistenceServiceProvider {
+    class Persistence: Service, PersistenceServiceProvider, ObservableObject {
+                
         static var provider: PersistenceServiceProvider?
         
         // MARK: Service
@@ -71,13 +80,39 @@ extension Services {
             }
             return result
         }()
-        
-        private let container: NSPersistentContainer
-        
+                
         // MARK: PersistenceServiceProvider
         
-        func store() {
-            //
+        var container: NSPersistentContainer
+
+        var items = PassthroughSubject<[Item], PersistenceError>()
+        
+        func addItem(item: Item) {
+            do {
+                try container.viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+        
+        func retrieveItems() {
+            let fetchRequest = NSFetchRequest<Item>(entityName: "Item")
+            fetchRequest.sortDescriptors = []
+            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            
+            container.viewContext.perform {
+                do {
+                    try controller.performFetch()
+                    let items = controller.fetchedObjects ?? []
+                    self.items.send(items)
+                } catch {
+                    print(error.localizedDescription)
+                    self.items.send(completion: .failure(.failedTogetAllItems))
+                }
+            }
         }
     }
 }

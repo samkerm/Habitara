@@ -8,22 +8,20 @@
 import SwiftUI
 import Combine
 
-struct HabitaraAppCoordinator {
-    static let shared = HabitaraAppCoordinator()
-    
-    func getNotificationPublisher(for event: NotificationEvent) -> AnyPublisher<NotificationCenter.Publisher.Output, NotificationCenter.Publisher.Failure> {
-        NotificationCenter.default
-            .publisher(for: event.name)
-            .eraseToAnyPublisher()
-    }
-    
-    private init() {
-        Services.Calendar.start()
-        Services.Persistence.start()
-    }
+protocol HabitaraAppCoordinatorInterface {
+    /// This method instantiates all fundamental services app needs to perform its function
+    func startFundamentalServices()
+    /// This method deallocates all fundamental services from memory
+    func endAllServices()
+    /// A publisher that publishes the app life cycle states.
+    func getNotificationPublisher(for event: HabitaraAppCoordinator.NotificationEvent) -> AnyPublisher<NotificationCenter.Publisher.Output, NotificationCenter.Publisher.Failure>
 }
 
-extension HabitaraAppCoordinator {
+/// This object manages app services and states
+struct HabitaraAppCoordinator: HabitaraAppCoordinatorInterface {
+    
+    static let shared: HabitaraAppCoordinatorInterface = HabitaraAppCoordinator()
+    
     enum NotificationEvent {
         case foreground
         case background
@@ -42,5 +40,23 @@ extension HabitaraAppCoordinator {
                 return UIApplication.willTerminateNotification
             }
         }
+    }
+    
+    private init() {}
+    
+    func getNotificationPublisher(for event: NotificationEvent) -> AnyPublisher<NotificationCenter.Publisher.Output, NotificationCenter.Publisher.Failure> {
+        NotificationCenter.default
+            .publisher(for: event.name)
+            .eraseToAnyPublisher()
+    }
+    
+    func startFundamentalServices() {
+        Services.Calendar.start()
+        Services.Persistence.start()
+    }
+    
+    func endAllServices() {
+        Services.Calendar.end()
+        Services.Persistence.end()
     }
 }
