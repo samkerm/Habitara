@@ -24,7 +24,6 @@ struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
                }
                .onDelete(perform: deleteItems)
             }
-            .navigationTitle(Text("Farshid's To Do list"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -35,8 +34,10 @@ struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
                     }
                 }
             }
-            Text("Select an item")
+            .navigationTitle("Farshid's To Do list")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
 
     private func addItem() {

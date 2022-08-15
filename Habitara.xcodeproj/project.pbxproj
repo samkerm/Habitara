@@ -87,6 +87,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53100D3A28AAED6700C0DB4E /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		5325C99328AA7B860051861C /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +165,7 @@
 		53BAF863289FFA6200ED4DA8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				53100D3A28AAED6700C0DB4E /* Sample */,
 				53BAF868289FFC4F00ED4DA8 /* Calendar */,
 				53BAF866289FFA8900ED4DA8 /* Presistence */,
 			);
@@ -225,6 +233,7 @@
 				53BAF82B289F29CF00ED4DA8 /* Sources */,
 				53BAF82C289F29CF00ED4DA8 /* Frameworks */,
 				53BAF82D289F29CF00ED4DA8 /* Resources */,
+				53F3052E28AAFE94004F9009 /* Add Templates to Xcode */,
 			);
 			buildRules = (
 			);
@@ -339,6 +348,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53F3052E28AAFE94004F9009 /* Add Templates to Xcode */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Add Templates to Xcode";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p ~/Library/Developer/Xcode/Templates\ncp -R Templates/Habitara\\ Component.xctemplate ~/Library/Developer/Xcode/Templates\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53BAF82B289F29CF00ED4DA8 /* Sources */ = {

@@ -17,7 +17,7 @@ protocol CalendarServiceProvider {
 
 extension Services {
     /// A service that provides all calendar needs
-    struct Calendar: Service, CalendarServiceProvider {
+    final class Calendar: Service, CalendarServiceProvider, ObservableObject {
         /// A singleton providing the **Calendar** service to keep the service in memory
         static var provider: CalendarServiceProvider?
         
