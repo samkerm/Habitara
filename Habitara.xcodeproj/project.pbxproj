@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5325C99228AA71820051861C /* CoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5325C99128AA71820051861C /* CoreDataPublisher.swift */; };
 		53BAF833289F29CF00ED4DA8 /* HabitaraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */; };
 		53BAF835289F29CF00ED4DA8 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF834289F29CF00ED4DA8 /* DashboardView.swift */; };
 		53BAF837289F29D000ED4DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BAF836289F29D000ED4DA8 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5325C99128AA71820051861C /* CoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPublisher.swift; sourceTree = "<group>"; };
 		53BAF82F289F29CF00ED4DA8 /* Habitara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraApp.swift; sourceTree = "<group>"; };
 		53BAF834289F29CF00ED4DA8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5325C99328AA7B860051861C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF867289FFB4E00ED4DA8 /* Component */,
+				53BAF86B28A05E4200ED4DA8 /* Services.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		53BAF826289F29CF00ED4DA8 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +119,7 @@
 		53BAF831289F29CF00ED4DA8 /* Habitara */ = {
 			isa = PBXGroup;
 			children = (
-				53BAF867289FFB4E00ED4DA8 /* Component */,
+				5325C99328AA7B860051861C /* Core */,
 				53BAF832289F29CF00ED4DA8 /* HabitaraApp.swift */,
 				53BAF861289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift */,
 				53BAF86F28A1714900ED4DA8 /* Flows */,
@@ -147,7 +158,6 @@
 		53BAF863289FFA6200ED4DA8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				53BAF86B28A05E4200ED4DA8 /* Services.swift */,
 				53BAF868289FFC4F00ED4DA8 /* Calendar */,
 				53BAF866289FFA8900ED4DA8 /* Presistence */,
 			);
@@ -158,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */,
+				5325C99128AA71820051861C /* CoreDataPublisher.swift */,
 				53BAF83D289F29D000ED4DA8 /* Habitara.xcdatamodeld */,
 			);
 			path = Presistence;
@@ -336,6 +347,7 @@
 			files = (
 				53BAF862289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift in Sources */,
 				53BAF86C28A05E4200ED4DA8 /* Services.swift in Sources */,
+				5325C99228AA71820051861C /* CoreDataPublisher.swift in Sources */,
 				53BAF86A28A05E0900ED4DA8 /* CalendarService.swift in Sources */,
 				53BAF86E28A16E0E00ED4DA8 /* MVVM.swift in Sources */,
 				53BAF87328A1717700ED4DA8 /* DashboardViewModel.swift in Sources */,

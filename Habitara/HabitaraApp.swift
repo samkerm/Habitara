@@ -20,7 +20,6 @@ struct HabitaraApp: App {
             DashboardView.make(
                 dependencies: .init(),
                 services: .init(presistence: Services.Persistence.provider!))
-                .environment(\.managedObjectContext, Services.Persistence.provider!.container.viewContext)
         }
     }
 }

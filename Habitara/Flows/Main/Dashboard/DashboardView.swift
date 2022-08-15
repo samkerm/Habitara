@@ -18,11 +18,13 @@ struct DashboardView: View {
                    NavigationLink {
                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                    } label: {
+                       Text("SAS at")
                        Text(item.timestamp!, formatter: itemFormatter)
                    }
                }
                .onDelete(perform: deleteItems)
             }
+            .navigationTitle(Text("Farshid's To Do list"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -45,16 +47,7 @@ struct DashboardView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { viewModel.items[$0] }.forEach(viewModel.viewContext.delete)
-
-            do {
-                try viewModel.viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            viewModel.deleteItem(index: offsets)
         }
     }
     
@@ -76,6 +69,7 @@ fileprivate let itemFormatter: DateFormatter = {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView.make(dependencies: .init(), services: .init(presistence: Services.Persistence.provider!)).environment(\.managedObjectContext, Services.Persistence.preview.container.viewContext)
+        DashboardView.make(dependencies: .init(), services: .init(presistence: Services.Persistence.provider!))
+            .environment(\.managedObjectContext, Services.Persistence.preview.container.viewContext)
     }
 }

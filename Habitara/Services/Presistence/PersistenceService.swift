@@ -5,6 +5,7 @@
 //  Created by Sam Kheirandish on 2022-08-06.
 //
 
+// import CoreHabitara
 import CoreData
 import Combine
 
@@ -15,8 +16,8 @@ enum PersistenceError: Error {
 protocol PersistenceServiceProvider {
     var container: NSPersistentContainer { get set }
     var items: PassthroughSubject<[Item], PersistenceError> { get }
-    func addItem(item: Item)
-    func retrieveItems()
+    func addItem(date: Date)
+    func delete(item: Item)
 }
 
 extension Services {
@@ -61,6 +62,7 @@ extension Services {
                 }
             })
             container.viewContext.automaticallyMergesChangesFromParent = true
+            assignPublisherForItems()
         }
         
         static var preview: Services.Persistence = {
@@ -83,11 +85,32 @@ extension Services {
                 
         // MARK: PersistenceServiceProvider
         
+        // MARK: Private
+        
+        private var cancelables = Set<AnyCancellable>()
+        private func assignPublisherForItems() {
+            CoreDataPublisher(request: Item.fetchRequest(), context: container.viewContext)
+                .sink { result in
+                    switch result {
+                    case .failure(_):
+                        break
+                    case .finished:
+                        break
+                    }
+                } receiveValue: { [weak self] in
+                    self?.items.send($0)
+                }
+                .store(in: &cancelables)
+        }
+        
+        // MARK: Internal
+        
         var container: NSPersistentContainer
-
         var items = PassthroughSubject<[Item], PersistenceError>()
         
-        func addItem(item: Item) {
+        func addItem(date: Date) {
+            let newItem = Item(context: container.viewContext)
+            newItem.timestamp = Date()
             do {
                 try container.viewContext.save()
             } catch {
@@ -98,20 +121,16 @@ extension Services {
             }
         }
         
-        func retrieveItems() {
-            let fetchRequest = NSFetchRequest<Item>(entityName: "Item")
-            fetchRequest.sortDescriptors = []
-            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        func delete(item: Item) {
+            container.viewContext.delete(item)
             
-            container.viewContext.perform {
-                do {
-                    try controller.performFetch()
-                    let items = controller.fetchedObjects ?? []
-                    self.items.send(items)
-                } catch {
-                    print(error.localizedDescription)
-                    self.items.send(completion: .failure(.failedTogetAllItems))
-                }
+            do {
+                try container.viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

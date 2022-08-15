@@ -7,11 +7,10 @@
 
 import Foundation
 import Combine
-import CoreData
 
 protocol DashboardViewModelInteface: ObservableObject {
-    func retrieveItems()
     func addNewItem()
+    func deleteItem(index: IndexSet)
 }
 
 final class DashboardViewModel: ViewModel, DashboardViewModelInteface {
@@ -22,7 +21,6 @@ final class DashboardViewModel: ViewModel, DashboardViewModelInteface {
     private let services: Dependencies.Services
     private var cancelables = Set<AnyCancellable>()
     
-    
     // MARK: Public
     
     struct Dependencies {
@@ -31,20 +29,20 @@ final class DashboardViewModel: ViewModel, DashboardViewModelInteface {
         }
     }
     
-    public let viewContext: NSManagedObjectContext
     @Published public var items = [Item]()
     
     
     init(dependencies: Dependencies, services: Dependencies.Services) {
         self.dependencies = dependencies
         self.services = services
-        self.viewContext = services.presistence.container.viewContext
-        retrieveItems()
+        bindItems()
     }
     
-    func retrieveItems() {
-        services.presistence.retrieveItems()
+    private func bindItems() {
         services.presistence.items
+            .map {
+                $0.sorted(by: { $0.timestamp ?? Date() < $1.timestamp ?? Date() })
+            }
             .sink {
                 switch $0 {
                 case .failure(let error):
@@ -60,9 +58,10 @@ final class DashboardViewModel: ViewModel, DashboardViewModelInteface {
     }
     
     func addNewItem() {
-        let newItem = Item(context: viewContext)
-        newItem.timestamp = Date()
-        
-        services.presistence.addItem(item: newItem)
+        services.presistence.addItem(date: Date())
+    }
+    
+    func deleteItem(index: IndexSet) {
+        index.map { items[$0] }.forEach(services.presistence.delete(item:))
     }
 }
