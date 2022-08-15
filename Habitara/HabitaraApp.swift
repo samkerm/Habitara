@@ -17,7 +17,7 @@ struct HabitaraApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DashboardView.make(
+            DashboardView<DashboardViewModel>.make(
                 dependencies: .init(),
                 services: .init(presistence: Services.Persistence.provider!))
         }
