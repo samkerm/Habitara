@@ -87,13 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53100D3A28AAED6700C0DB4E /* Sample */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sample;
-			sourceTree = "<group>";
-		};
 		5325C99328AA7B860051861C /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +158,6 @@
 		53BAF863289FFA6200ED4DA8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				53100D3A28AAED6700C0DB4E /* Sample */,
 				53BAF868289FFC4F00ED4DA8 /* Calendar */,
 				53BAF866289FFA8900ED4DA8 /* Presistence */,
 			);
