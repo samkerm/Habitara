@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct DashboardView: View {
+struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
     
-    @ObservedObject var viewModel: DashboardViewModel
+    @ObservedObject var viewModel: VM
         
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.items) { item in
+                ForEach($viewModel.items) { item in
                    NavigationLink {
-                       Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                       Text("Item at \(item.wrappedValue.timestamp!, formatter: itemFormatter)")
                    } label: {
                        Text("SAS at")
-                       Text(item.timestamp!, formatter: itemFormatter)
+                       Text(item.wrappedValue.timestamp!, formatter: itemFormatter)
                    }
                }
                .onDelete(perform: deleteItems)
@@ -54,11 +54,8 @@ struct DashboardView: View {
     typealias Dependencies = DashboardViewModel.Dependencies
     typealias Services = DashboardViewModel.Dependencies.Services
 }
-extension DashboardView {
-    static func make(dependencies: Dependencies, services: Services) -> DashboardView {
-        DashboardView(viewModel: DashboardViewModel(dependencies: dependencies, services: services))
-    }
-}
+
+// MARK: Fileprivates
 
 fileprivate let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -67,9 +64,18 @@ fileprivate let itemFormatter: DateFormatter = {
     return formatter
 }()
 
+// MARK: Extensions
+
+extension DashboardView {
+    static func make(dependencies: Dependencies, services: Services) -> DashboardView {
+        DashboardView(viewModel: DashboardViewModel(dependencies: dependencies, services: services) as! VM)
+    }
+}
+
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView.make(dependencies: .init(), services: .init(presistence: Services.Persistence.provider!))
+        DashboardView<DashboardViewModel>
+            .make(dependencies: .init(), services: .init(presistence: Services.Persistence.provider!))
             .environment(\.managedObjectContext, Services.Persistence.preview.container.viewContext)
     }
 }

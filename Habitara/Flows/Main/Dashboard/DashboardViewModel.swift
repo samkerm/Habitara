@@ -8,12 +8,13 @@
 import Foundation
 import Combine
 
-protocol DashboardViewModelInteface: ObservableObject {
+protocol DashboardViewModelInteface: ViewModel {
+    var items: [Item] { get set }
     func addNewItem()
     func deleteItem(index: IndexSet)
 }
 
-final class DashboardViewModel: ViewModel, DashboardViewModelInteface {
+final class DashboardViewModel: DashboardViewModelInteface {
     
     // MARK: Private
     
