@@ -15,7 +15,7 @@ class CoreDataPublisher<Entity>: NSObject, NSFetchedResultsControllerDelegate, P
   
     private let request: NSFetchRequest<Entity>
     private let context: NSManagedObjectContext
-    private let subject: CurrentValueSubject<[Entity], Failure>
+    private let subject: PassthroughSubject<[Entity], Failure>
     private var resultController: NSFetchedResultsController<NSManagedObject>?
     private var subscriptions = 0
   
@@ -23,7 +23,7 @@ class CoreDataPublisher<Entity>: NSObject, NSFetchedResultsControllerDelegate, P
         if request.sortDescriptors == nil { request.sortDescriptors = [] }
         self.request = request
         self.context = context
-        subject = CurrentValueSubject([])
+        subject = PassthroughSubject<[Entity], Failure>()
         super.init()
     }
   

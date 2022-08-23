@@ -10,32 +10,36 @@ import SwiftUI
 struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
     
     @ObservedObject var viewModel: VM
-        
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach($viewModel.items) { item in
-                   NavigationLink {
-                       Text("Item at \(item.wrappedValue.timestamp!, formatter: itemFormatter)")
-                   } label: {
-                       Text("SAS at")
-                       Text(item.wrappedValue.timestamp!, formatter: itemFormatter)
+            if viewModel.error == .persistenceService {
+                Text("Presistence service error")
+            } else {
+                List {
+                    ForEach(viewModel.items) { item in
+                       NavigationLink {
+                           Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                       } label: {
+                           Text("SAS at")
+                           Text(item.timestamp!, formatter: itemFormatter)
+                       }
                    }
-               }
-               .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                   .onDelete(perform: deleteItems)
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
                     }
                 }
+                .navigationTitle("Farshid's To Do list")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Farshid's To Do list")
-            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
     }

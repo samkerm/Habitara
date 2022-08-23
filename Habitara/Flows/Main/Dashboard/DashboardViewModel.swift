@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 protocol DashboardViewModelInteface: ViewModel {
-    var items: [Item] { get set }
+    var items: [Item] { get }
+    var error: DashboardViewModel.DashboardError? { get }
     func addNewItem()
     func deleteItem(index: IndexSet)
 }
@@ -30,8 +31,12 @@ final class DashboardViewModel: DashboardViewModelInteface {
         }
     }
     
-    @Published public var items = [Item]()
+    enum DashboardError {
+        case persistenceService
+    }
     
+    @Published private(set) var items = [Item]()
+    @Published private(set) var error: DashboardError?
     
     init(dependencies: Dependencies, services: Dependencies.Services) {
         self.dependencies = dependencies
@@ -44,12 +49,12 @@ final class DashboardViewModel: DashboardViewModelInteface {
             .map {
                 $0.sorted(by: { $0.timestamp ?? Date() < $1.timestamp ?? Date() })
             }
-            .sink {
+            .sink { [weak self] in
                 switch $0 {
-                case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.error = .persistenceService
                 case .finished:
-                    break
+                    self?.error = nil
                 }
             } receiveValue: { [weak self] in
                 self?.items = $0
@@ -63,6 +68,6 @@ final class DashboardViewModel: DashboardViewModelInteface {
     }
     
     func deleteItem(index: IndexSet) {
-        index.map { items[$0] }.forEach(services.presistence.delete(item:))
+        index.compactMap { items[$0] }.forEach(services.presistence.delete(item:))
     }
 }

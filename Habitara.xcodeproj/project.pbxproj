@@ -14,7 +14,7 @@
 		53BAF83A289F29D000ED4DA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BAF839289F29D000ED4DA8 /* Preview Assets.xcassets */; };
 		53BAF83C289F29D000ED4DA8 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */; };
 		53BAF83F289F29D000ED4DA8 /* Habitara.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF83D289F29D000ED4DA8 /* Habitara.xcdatamodeld */; };
-		53BAF849289F29D000ED4DA8 /* HabitaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */; };
+		53BAF849289F29D000ED4DA8 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF848289F29D000ED4DA8 /* DashboardTests.swift */; };
 		53BAF853289F29D000ED4DA8 /* HabitaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF852289F29D000ED4DA8 /* HabitaraUITests.swift */; };
 		53BAF855289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF854289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift */; };
 		53BAF862289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF861289FFA5E00ED4DA8 /* HabitaraAppCoordinator.swift */; };
@@ -22,6 +22,8 @@
 		53BAF86C28A05E4200ED4DA8 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF86B28A05E4200ED4DA8 /* Services.swift */; };
 		53BAF86E28A16E0E00ED4DA8 /* MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF86D28A16E0E00ED4DA8 /* MVVM.swift */; };
 		53BAF87328A1717700ED4DA8 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BAF87228A1717700ED4DA8 /* DashboardViewModel.swift */; };
+		53F3053128ABA286004F9009 /* MockedPersistenceServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F3053028ABA286004F9009 /* MockedPersistenceServiceProvider.swift */; };
+		53F3053428AEFCCC004F9009 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F3053328AEFCCC004F9009 /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,7 @@
 		53BAF83B289F29D000ED4DA8 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		53BAF83E289F29D000ED4DA8 /* Habitara.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habitara.xcdatamodel; sourceTree = "<group>"; };
 		53BAF844289F29D000ED4DA8 /* HabitaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitaraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraTests.swift; sourceTree = "<group>"; };
+		53BAF848289F29D000ED4DA8 /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
 		53BAF84E289F29D000ED4DA8 /* HabitaraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitaraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BAF852289F29D000ED4DA8 /* HabitaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraUITests.swift; sourceTree = "<group>"; };
 		53BAF854289F29D000ED4DA8 /* HabitaraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitaraUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -60,6 +62,8 @@
 		53BAF86B28A05E4200ED4DA8 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		53BAF86D28A16E0E00ED4DA8 /* MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM.swift; sourceTree = "<group>"; };
 		53BAF87228A1717700ED4DA8 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		53F3053028ABA286004F9009 /* MockedPersistenceServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedPersistenceServiceProvider.swift; sourceTree = "<group>"; };
+		53F3053328AEFCCC004F9009 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +145,9 @@
 		53BAF847289F29D000ED4DA8 /* HabitaraTests */ = {
 			isa = PBXGroup;
 			children = (
-				53BAF848289F29D000ED4DA8 /* HabitaraTests.swift */,
+				53F3053528AF0A63004F9009 /* Flows */,
+				53F3053228AEFCAF004F9009 /* Helpers */,
+				53F3052F28ABA25D004F9009 /* Services */,
 			);
 			path = HabitaraTests;
 			sourceTree = "<group>";
@@ -213,6 +219,38 @@
 				53BAF87228A1717700ED4DA8 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		53F3052F28ABA25D004F9009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				53F3053028ABA286004F9009 /* MockedPersistenceServiceProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		53F3053228AEFCAF004F9009 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53F3053328AEFCCC004F9009 /* XCTestCase+Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		53F3053528AF0A63004F9009 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				53F3053628AF0A6A004F9009 /* Main */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		53F3053628AF0A6A004F9009 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53BAF848289F29D000ED4DA8 /* DashboardTests.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,7 +423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53BAF849289F29D000ED4DA8 /* HabitaraTests.swift in Sources */,
+				53BAF849289F29D000ED4DA8 /* DashboardTests.swift in Sources */,
+				53F3053428AEFCCC004F9009 /* XCTestCase+Extensions.swift in Sources */,
+				53F3053128ABA286004F9009 /* MockedPersistenceServiceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

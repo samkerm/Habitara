@@ -36,7 +36,11 @@ extension Services {
             Self.provider = nil
         }
         
-        static func mock(with service: PersistenceServiceProvider) {
+        static func mock(with service: PersistenceServiceProvider? = nil) {
+            guard let service = service else {
+                Self.provider = Persistence(inMemory: true)
+                return
+            }
             Self.provider = service
         }
         
@@ -90,12 +94,12 @@ extension Services {
         private var cancelables = Set<AnyCancellable>()
         private func assignPublisherForItems() {
             CoreDataPublisher(request: Item.fetchRequest(), context: container.viewContext)
-                .sink { result in
+                .sink { [weak self] result in
                     switch result {
                     case .failure(_):
-                        break
+                        self?.items.send(completion: .failure(.failedTogetAllItems))
                     case .finished:
-                        break
+                        self?.items.send(completion: .finished)
                     }
                 } receiveValue: { [weak self] in
                     self?.items.send($0)
