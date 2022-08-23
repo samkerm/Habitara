@@ -145,9 +145,9 @@
 		53BAF847289F29D000ED4DA8 /* HabitaraTests */ = {
 			isa = PBXGroup;
 			children = (
+				53DFC7A328B595960021041A /* Mocks */,
 				53F3053528AF0A63004F9009 /* Flows */,
 				53F3053228AEFCAF004F9009 /* Helpers */,
-				53F3052F28ABA25D004F9009 /* Services */,
 			);
 			path = HabitaraTests;
 			sourceTree = "<group>";
@@ -219,6 +219,14 @@
 				53BAF87228A1717700ED4DA8 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		53DFC7A328B595960021041A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				53F3052F28ABA25D004F9009 /* Services */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		53F3052F28ABA25D004F9009 /* Services */ = {
