@@ -31,7 +31,12 @@ class MockedPersistenceServiceProvider: PersistenceServiceProvider {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        
+        items = PassthroughSubject<[Item], PersistenceError>()
+        addSomeItems()
+        assignPublisherForItems()
+    }
+    
+    private func addSomeItems() {
         for _ in 0..<10 {
             let newItem = Item(context: container.viewContext)
             newItem.timestamp = Date()
@@ -44,9 +49,6 @@ class MockedPersistenceServiceProvider: PersistenceServiceProvider {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        
-        items = PassthroughSubject<[Item], PersistenceError>()
-        assignPublisherForItems()
     }
     
     var cancelables = Set<AnyCancellable>()

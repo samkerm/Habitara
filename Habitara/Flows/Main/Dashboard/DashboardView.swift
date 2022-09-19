@@ -26,15 +26,18 @@ struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
                        }
                    }
                    .onDelete(perform: deleteItems)
+                   .accessibilityIdentifier(Id.Dashboard.storedTask)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
+                            .accessibilityIdentifier(Id.Dashboard.editButton)
                     }
                     ToolbarItem {
                         Button(action: addItem) {
                             Label("Add Item", systemImage: "plus")
                         }
+                        .accessibilityIdentifier(Id.Dashboard.addTaskButton)
                     }
                 }
                 .navigationTitle("Farshid's To Do list")
@@ -42,6 +45,7 @@ struct DashboardView<VM>: HabitaraView where VM: DashboardViewModelInteface {
             }
         }
         .navigationViewStyle(.stack)
+        .accessibilityIdentifier(Id.Dashboard.navigationTitle)
     }
 
     private func addItem() {
